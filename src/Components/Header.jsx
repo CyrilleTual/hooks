@@ -7,7 +7,7 @@ function Header() {
     <header>
       <nav>
         <NavLink className={style.button} to="/">Home</NavLink>
-        <NavLink className={style.button} to="/formulaire">Formulaire</NavLink>
+        <NavLink className={style.button} to="/form">Formulaire</NavLink>
       </nav>
     </header>
   );
