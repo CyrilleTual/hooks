@@ -22,6 +22,9 @@ function Form() {
           value={state.alias}
           onChange={(e) => dispatch({ type: "ALIAS", payload: { event: e } })}
         />
+        <br />
+
+        <label htmlFor="age">age</label>
         <input
           type="number"
           id="age"
@@ -29,12 +32,23 @@ function Form() {
           value={state.age}
           onChange={(e) => dispatch({ type: "AGE", payload: { event: e } })}
         />
+        <br />
 
-        <input type="submit" value="Envoyer" />
+        <label>
+          <input
+            type="checkbox"
+            name="idAdmin"
+            checked={state.isAdmin}
+            onChange={() => dispatch ({ type: "ISADMIN"}) }
+          />
+          Admin
+        </label>
+        <br />
       </form>
 
       <p>Voici Mon Alias : {state.alias}</p>
       <p>Voici Mon Age : {state.age} ans (mais je fais moins )</p>
+      <p>Mon statut est admin?  : { state.isAdmin  ? "oui" : "non" } </p>
     </>
   );
 }
