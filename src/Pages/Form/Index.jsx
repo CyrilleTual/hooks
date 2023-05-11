@@ -25,8 +25,9 @@ function Form() {
     }
 
   return (
-    <>
-      <form className = {style.form} action="#">
+    <div className={style.form}>
+      <h2> Component Form </h2>
+      <form action="#">
         <label htmlFor="alias">alias</label>
         <input
           type="text"
@@ -47,8 +48,6 @@ function Form() {
         />
         <br />
 
-     
-     
         <label>
           <input
             type="checkbox"
@@ -61,10 +60,8 @@ function Form() {
         <br />
       </form>
 
-
-
-      <User state={state} reset={reset} toto={toto}/>
-    </>
+      <User state={state} reset={reset} toto={toto} />
+    </div>
   );
 }
 
