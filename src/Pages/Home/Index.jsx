@@ -24,7 +24,7 @@ function Home() {
         <ul>
           {datas.map((product, i) => (
             <li key={product.id}>
-              <article>{product.title}</article>
+               {product.title}
             </li>
           ))}
         </ul>
