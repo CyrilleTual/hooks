@@ -1,19 +1,32 @@
 import React, { useReducer } from 'react'
 import { reducer } from '../../reducer/index.js';
+import User from "../User/Index.jsx";
+import style from "./form.module.css";
 
 // on veut mettre en pplace un state qui comprendra les données d'un form
 
 const initialState = { alias: "", age: null, isAdmin: false };
 
+
+
 function Form() {
 
     // Set et initialisation du state 
-
     const [state, dispatch] = useReducer(reducer, initialState);
+
+   
+
+    const reset = () => {
+        dispatch({ type: "RESET" });
+    }
+
+    const toto = () => {
+        console.log ('toto')
+    }
 
   return (
     <>
-      <form action="">
+      <form className = {style.form} action="#">
         <label htmlFor="alias">alias</label>
         <input
           type="text"
@@ -34,21 +47,23 @@ function Form() {
         />
         <br />
 
+     
+     
         <label>
           <input
             type="checkbox"
             name="idAdmin"
             checked={state.isAdmin}
-            onChange={() => dispatch ({ type: "ISADMIN"}) }
+            onChange={() => dispatch({ type: "ISADMIN" })}
           />
           Admin
         </label>
         <br />
       </form>
 
-      <p>Voici Mon Alias : {state.alias}</p>
-      <p>Voici Mon Age : {state.age} ans (mais je fais moins )</p>
-      <p>Mon statut est admin?  : { state.isAdmin  ? "oui" : "non" } </p>
+
+
+      <User state={state} reset={reset} toto={toto}/>
     </>
   );
 }

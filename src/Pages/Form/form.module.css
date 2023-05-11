@@ -1,0 +1,15 @@
+.form{
+    margin-top: 10px;
+    margin: auto;
+    display: block;
+    width: 80%;
+    padding: 10px;
+    background-color: lavender;
+}
+
+.form label{
+    display: inline-block;
+    width: 30px;
+    padding: 5px;
+    width : 100px;
+}
