@@ -43,7 +43,7 @@ function Form() {
           type="number"
           id="age"
           name="age"
-          value={state.age}
+          value={state.age ? state.age : ""}
           onChange={(e) => dispatch({ type: "AGE", payload: { event: e } })}
         />
         <br />
